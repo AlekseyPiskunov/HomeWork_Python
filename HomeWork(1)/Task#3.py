@@ -9,7 +9,7 @@
 - x=-34; y=-30 -> 3
 '''
 
-def inputKoord(x):
+def inputCoordinates(x):
     a = [0] * x
     for i in range(x):
         is_OK = False
@@ -20,9 +20,9 @@ def inputKoord(x):
                 is_OK = True
                 if a[i] == 0:
                     is_OK = False
-                    print("Координата не должно быть равна 0 ")
+                    print("Координата не должна быть равна 0.")
             except ValueError:
-                print("Ты ошибся. Вводить надо числа!")
+                print("Вводить надо числа!")
     return a
 
 def checkCoordinates(xy):
@@ -33,7 +33,7 @@ def checkCoordinates(xy):
         text = 2
     elif xy[0] < 0 and xy[1] < 0:
         text = 3
-    print(f"Точка находится в {text} четверти плоскости")
+    print(f"Точка находится в {text} четверти плоскости.")
 
-koordinate = inputKoord(2)
-checkCoordinates(koordinate)
+coordinates = inputCoordinates(2)
+checkCoordinates(coordinates)
