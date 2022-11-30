@@ -5,7 +5,6 @@
 '''
 
 string = input('Введите строку: ')
-string = string.lower()
 
 if string.count('о') < 2:
     print('В строке не достаточно букв "о".')
