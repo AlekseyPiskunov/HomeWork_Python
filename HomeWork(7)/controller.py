@@ -2,15 +2,15 @@ from module_view import *
 from module_menu import menu
 from module_changing_the_day_of_the_week import *
 
-def di_it():
+def do_it():
     while True:
         days_week = \
             [
-                ['понедельник', 'вторник'],
-                ['вторник', 'среда'],
-                ['среда', 'четверг'],
-                ['четверг', 'пятница'],
-                ['пятница']
+                ['понедельник', 'вторник', 0, 7],
+                ['вторник', 'среда', 1, 5],
+                ['среда', 'четверг', 2, 6],
+                ['четверг', 'пятница', 3, 4],
+                ['пятница', 'конец', 4, 6]
             ]
 
         print()
@@ -20,6 +20,7 @@ def di_it():
             print_file()
             print()
             input('Нажмите Enter для того , что бы попасть в меню и продолжить работу.')
+
 
         elif result_menu == 2:
             print()
@@ -33,30 +34,33 @@ def di_it():
             elif day.lower() == days_week[3][0]:
                 print_day(days_week[3][0].capitalize(), days_week[3][1].capitalize())
             elif day.lower() == days_week[4][0]:
-                print_day(days_week[4][0].capitalize(), 'конец')
+                print_day(days_week[4][0].capitalize(), days_week[4][1])
             else:
                 print('Ошибка. Вы ввели что то не то...')
+                continue
 
             input('Нажмите Enter для того , что бы попасть в меню и продолжить работу.')
 
+
         elif result_menu == 3:
             day = input('В каком дне недели хотите поменять расписание? (Например: "Понедельник"): ')
-            if day.lower() == 'понедельник':
+            if day.lower() == days_week[0][0]:
                 print('Понедельник.')
-                change_on_monday()
-            elif day.lower() == 'вторник':
+                change_day(days_week[0][2], days_week[0][3])
+            elif day.lower() == days_week[1][0]:
                 print('Вторник.')
-                change_on_tuesday()
-            elif day.lower() == 'среда':
+                change_day(days_week[1][2], days_week[1][3])
+            elif day.lower() == days_week[2][0]:
                 print('Среда.')
-                change_on_wednesday()
-            elif day.lower() == 'четверг':
+                change_day(days_week[2][2], days_week[2][3])
+            elif day.lower() == days_week[3][0]:
                 print('Четверг.')
-                change_on_thursday()
-            elif day.lower() == 'пятница':
+                change_day(days_week[3][2], days_week[3][3])
+            elif day.lower() == days_week[4][0]:
                 print('Пятница.')
-                change_on_friday()
+                change_day(days_week[4][2], days_week[4][3])
             else:
                 print('Ошибка. Вы ввели что то не то...')
+                continue
 
             input('Нажмите Enter для того , что бы попасть в меню и продолжить работу.')

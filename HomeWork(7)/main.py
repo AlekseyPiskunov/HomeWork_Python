@@ -1,3 +1,3 @@
-from controller import di_it
+from controller import do_it
 
-di_it()
+do_it()
