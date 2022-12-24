@@ -10,7 +10,7 @@ def print_file():
         print()
         print(data.read())
 
-# Печать расписания на Понедельник.
+# Печать расписания на определённый день недели.
 def print_day(start, stop):
     with open('file.txt', 'r', encoding='utf-8') as data:
         text = data.read()
