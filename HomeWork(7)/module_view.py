@@ -11,45 +11,10 @@ def print_file():
         print(data.read())
 
 # Печать расписания на Понедельник.
-def print_monday():
+def print_day(start, stop):
     with open('file.txt', 'r', encoding='utf-8') as data:
         text = data.read()
-        start = text.find('Понедельник')
-        finish = text.find('Вторник')
+        source = text.find(start)
+        finish = text.find(stop)
         print()
-        print(text[start: finish:])
-
-# Печать расписания на Вторник.
-def print_tuesday():
-    with open('file.txt', 'r', encoding='utf-8') as data:
-        text = data.read()
-        start = text.find('Вторник')
-        finish = text.find('Среда')
-        print()
-        print(text[start: finish:])
-
-# Печать расписания на Среду.
-def print_wednesday():
-    with open('file.txt', 'r', encoding='utf-8') as data:
-        text = data.read()
-        start = text.find('Среда')
-        finish = text.find('Четверг')
-        print()
-        print(text[start: finish:])
-
-# Печать расписания на Четверг.
-def print_thursday():
-    with open('file.txt', 'r', encoding='utf-8') as data:
-        text = data.read()
-        start = text.find('Четверг')
-        finish = text.find('Пятница')
-        print()
-        print(text[start: finish:])
-
-# Печать расписания на Пятницу.
-def print_friday():
-    with open('file.txt', 'r', encoding='utf-8') as data:
-        text = data.read()
-        start = text.find('Пятница')
-        print()
-        print(text[start::])
+        print(text[source: finish:])
